@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Made</title>
+
+    <style>
+        /* ====== Header Styling ====== */
+        .header-profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-profile img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #fff;
+            box-shadow: 0 0 5px rgba(0,0,0,0.3);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 60px;
+            background: rgba(34, 34, 34, 0.85); /* transparan agar background tetap terlihat */
+            color: #fff;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .navigation a {
+            color: #fff;
+            margin-left: 20px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .navigation a:hover {
+            color: #f0c14b;
+        }
+
+        /* ====== Animasi untuk teks home ====== */
+        .text h2, .text h3, .text .main-btn, .text .social-icons {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s ease forwards;
+        }
+
+        .text h2 { animation-delay: 0.3s; }
+        .text h3 { animation-delay: 0.8s; }
+        .text .main-btn { animation-delay: 1.3s; }
+        .text .social-icons { animation-delay: 1.8s; }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ====== Styling tambahan untuk tampilan home ====== */
+        .main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            height: 100vh;
+            background: url('images/img.gif') center/cover no-repeat; /* ✅ Background gambar */
+            color: #fff;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        /* Efek overlay gelap agar teks terlihat jelas di atas background */
+        .main::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 0;
+        }
+
+        .text {
+            position: relative;
+            z-index: 1;
+        }
+
+        .text h2 {
+            font-size: 2.2rem;
+        }
+
+        .text span {
+            color: #f0c14b;
+        }
+
+        .text h3 {
+            font-size: 1.2rem;
+            margin: 10px 0 20px;
+        }
+
+        .main-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            background: #f0c14b;
+            color: #222;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .main-btn:hover {
+            background: #fff;
+            color: #000;
+            box-shadow: 0 0 10px #f0c14b;
+        }
+
+        .social-icons {
+            margin-top: 25px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 1.4rem;
+            margin: 0 10px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #f0c14b;
+            transform: scale(1.2);
+        }
+
+        /* ====== Section dan Footer tetap seperti sebelumnya ====== */
+        .cards, .projects, .contact, .footer {
+            padding: 80px 40px;
+        }
+
+        .footer {
+            text-align: center;
+            background: #222;
+            color: #fff;
+            padding: 25px 10px;
+        }
+
+        .footer .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+        }
+
+        .footer .social-icons a:hover {
+            color: #f0c14b;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-profile">
+            <img src="images/img-foto.jpeg" alt="Foto Profil">
+            <a class="logo" href="#">Portofolio</a>
+        </div>
+        <nav class="navigation">
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="main" id="home">
+        <div class="text">
+            <h2>Hello I'm I Made Suliana<br><span>Mahasiswa Sari Mulia</span></h2>
+            <h3>Program Studi S1 Teknologi Informasi</h3>
+            <a href="#projects" class="main-btn">View My Work</a>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/share/19yspPdqkU/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://x.com/made_suliana?s=21" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/madesuliana__?igsh=M2hoNnJnY2s3bDRl&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/madesuliana" target="_blank"><i class="fab fa-github"></i></a>
+            </div>    
+        </div>
+    </section>
+    </style>
+</head>
+    <section class="cards" id="services">
+        <h1 class="title">Services</h1>
+        <div class="content">
+            <div class="card">
+                <div class="icon"><i class="fas fa-terminal"></i></div>
+                <div class="info"><h3>Script writing</h3></div>
+            </div>
+            <div class="card">
+                <div class="icon"><i class="fas fa-database"></i></div>
+                <div class="info"><h3>Full web Development</h3></div>
+            </div>
+            <div class="card">
+                <div class="icon"><i class="fas fa-pen-nib"></i></div>
+                <div class="info"><h3>Graphic Design</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <h2 class="title">Projects</h2>
+        <div class="content">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images/p1.png" alt="Mountain-image">
+                </div>
+                <div class="project-info">
+                    <p class="project-catogrey">Script Writing & Portfolio</p>
+                    <strong class="project-title">
+                        <span>Portfolio #2</span>
+                        <a class="more-details" href="#" target="_blank">More Details</a>
+                    </strong>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images/p2.jpg" alt="Mountain-image">
+                </div>
+                <div class="project-info">
+                    <p class="project-catogrey">Script Writing</p>
+                    <strong class="project-title">
+                        <span>Password Generator</span>
+                        <a class="more-details" href="#" target="_blank">More Details</a>
+                    </strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="title">Get In Touch With Me</h2>
+        <div class="content">
+            <div class="card">
+                <div class="icon"><i class="fas fa-phone"></i></div>
+                <div class="info">
+                    <h3>Phone</h3>
+                    <p><a href="tel:+6282262250113" target="_blank">+6282262250113</a></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon"><i class="fas fa-envelope"></i></div>
+                <div class="info">
+                    <h3>Email</h3>
+                    <p><a href="mailto:sulianamade@gmail.com" target="_blank">sulianamade@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p class="footer-title">Copyrights @ <span>Madesuliana</span></p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/19yspPdqkU/?mibextid=wwXIfr" class="fb" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://x.com/made_suliana?s=21" class="tw" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/madesuliana__?igsh=M2hoNnJnY2s3bDRl&utm_source=qr" class="ig" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/madesuliana" class="gh" target="_blank"><i class="fab fa-github"></i></a>
+        </div>    
+    </footer>
+</body>
+</html>
